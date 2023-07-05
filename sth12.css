@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  
+  h1 {
+    color: #02082c;
+     text-align: center;
+     
+  }
+  
+  .container {
+    width: 85%;
+    margin: 0  auto; 
+    text-align: center;
+    padding-top: 50px;
+  
+  
+  }
+  
+  .header {
+    width: 100%;
+    background-color: #02082c;
+    color: white;
+    /* flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+  }
+
+  
+  .header ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .header ul li {
+    /* TOP/BOTTOM LEFT/RIGHT */
+    margin: 0 20px;
+  }
+  
+  .header ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .header ul li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform:scaleX(0);
+    transition: transform .5s;
+  
+  }
+  .header ul li a:hover::after{
+    transform-origin: left;
+    transform:scaleX(1);
+  
+  }
+  
+  .hero {
+    padding-right: 40px; 
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    height: 500px;
+    background: url('./laundrypic.jpg');
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hero .container {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+  } 
+  .hero-desc {
+    width: 80%;
+  
+  }
+  .hero-desc > * {
+    color: #02082c;
+    
+  }
+  .hero-desc h1 {
+    font-size: 50px;
+    
+  }
+  
+  .hero-desc p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .hero-desc a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #02082c;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 2px;
+    text-align: center;
+  }
+  
+  .how-it-works {
+    background-color: #aedcf3;
+    padding-bottom: 80px;
+  }
+  .how-it-works .container {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 15px;
+  }
+  .how-it-works a {
+    text-decoration: none;
+    color: white;
+    background-color:#aedcf3;
+    padding: 40px 50px;
+    border-radius: 3px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 30px 0;
+  }
+  .card {
+    background-color:#162938;
+    color: white;
+    padding: 40px 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .card h1 {
+    color: white;
+  }
+  
+  .card i {
+    font-size: 45px;
+    text-align: center;
+  }
+  
+  .card > * {
+    margin: 5px 0;
+  }
+  
+  .main-spacing {
+    /* Top/bottom ---- Left/Right */
+    padding: 50px 0;
+  }
+  
+  .why h1,
+  .why p {
+    text-align: center;
+  }
+  .row-spacing {
+    width: 65%;
+    margin: 0 auto;
+  }
+  
+  .contact {
+    color: white;
+    background-color: #036596;
+  }
+  .contact h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  .contact form {
+    width: 40%;
+    /* center a div */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    /* border-width border-type border-color */
+    border: 2px solid white;
+    padding: 40px;
+    border-radius: 15px;
+  }
+  
+  .contact form input {
+    background-color: transparent;
+    border: 2px solid white;
+    margin: 10px 0;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    outline: 0;
+  }
+  
+  .contact form input::placeholder {
+    color: whitesmoke;
+  }
+  .contact form input[type="submit"] {
+    background-color: #02082c;
+    color: white;
+    border: 0;
+    cursor: pointer;
+  }
+  
+  footer {
+    background-color: #02082c;
+    color: white;
+  }
+  
+  footer p {
+    text-align: center;
+    font-weight: 700;
+  }

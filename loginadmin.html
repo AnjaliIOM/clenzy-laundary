@@ -1,0 +1,87 @@
+<!DOCTYPE html>  
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('ADMIN45.jpg');
+            background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+  } 
+        
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 4px;
+            background: transparent;
+            backdrop-filter: blur(20px);
+        }
+
+        .container h2 {
+            text-align: center;
+            color: aliceblue;
+        }
+
+        .container select,
+        .container input[type="password"]{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .container input[type="text"]{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .container input[type="submit"] {
+            background-color: #02082c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color:powderblue;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="validate12.php" method="post">
+            <select id="user-type">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login" onclick="login()">
+        </form>
+        <div id="error" class="error-message"></div>
+    </div>
+</body>
+</html>

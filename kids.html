@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Men's Dry Cleaning Price List</title>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #f2f2f2;
+    }
+    
+    .subtotal {
+        font-weight: bold;
+    }
+</style>
+    <script>
+        function calculateSubtotal(row) {
+            var price = parseFloat(row.querySelector('.price').innerText);
+            var quantity = parseFloat(row.querySelector('.quantity').value);
+            var subtotal = price * quantity;
+            row.querySelector('.subtotal').innerText = subtotal.toFixed(2);
+        }
+        
+        function updateSubtotal(row) {
+            calculateSubtotal(row);
+            var table = document.getElementById('priceList');
+            var rows = table.getElementsByTagName('tr');
+            var total = 0;
+            for (var i = 1; i < rows.length; i++) {
+                var subtotal = parseFloat(rows[i].querySelector('.subtotal').innerText);
+                if (!isNaN(subtotal)) {
+                    total += subtotal;
+                }
+            }
+            document.getElementById('total').innerText = total.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Kid's Dry Cleaning Price List</h1>
+    
+    <table id="priceList">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+        <tr>
+            <td>Kids blazer/waist coat</td>
+            <td class="price">150.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Frock small</td>
+            <td class="price">150.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Frock large</td>
+            <td class="price">250.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Kids lehenga silk-skirt</td>
+            <td class="price">100.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Kids pant/trousers</td>
+            <td class="price">60.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Kids skirt</td>
+            <td class="price">60.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Kids T-shirt/shorts</td>
+            <td class="price">40.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Kids top</td>
+            <td class="price">50.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Kids kurtha/pyjama-silk </td>
+            <td class="price">60.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Kids kurtha pyjama-cotton</td>
+            <td class="price">40.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Baby bed/quilt</td>
+            <td class="price">180.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Kids pant small</td>
+            <td class="price">40.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Waist coat small</td>
+            <td class="price">50.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Uniform-tie</td>
+            <td class="price">30.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Uniform-shirt</td>
+            <td class="price">50.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Uniform-pant</td>
+            <td class="price">50.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        <tr>
+            <td>Uniform-skirt</td>
+            <td class="price">50.00</td>
+            <td><input type="number" class="quantity" min="0" oninput="updateSubtotal(this.parentNode.parentNode)"></td>
+            <td class="subtotal">0.00</td>
+        </tr>
+        
+        <!-- Add more rows for other products here -->
+    </table>
+    <h3>Total: $<span id="total">0.00</span></h3>
+</body>
+</html>
+

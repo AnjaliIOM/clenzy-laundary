@@ -1,0 +1,62 @@
+<style>
+    .quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.increment-button,
+.decrement-button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.increment-button:hover,
+.decrement-button:hover {
+  background-color: #d9d9d9;
+}
+
+</style>
+<table>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+    </tr>
+    <tr>
+      <td>T-Shirt</td>
+      <td>
+        <div class="quantity-control">
+          <button class="decrement-button">-</button>
+          <input type="number" class="quantity-input" value="0">
+          <button class="increment-button">+</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+<script>
+    // Get the elements
+const incrementButton = document.querySelector('.increment-button');
+const decrementButton = document.querySelector('.decrement-button');
+const quantityInput = document.querySelector('.quantity-input');
+
+// Add event listeners
+incrementButton.addEventListener('click', () => {
+  quantityInput.value = parseInt(quantityInput.value) + 1;
+});
+
+decrementButton.addEventListener('click', () => {
+  if (parseInt(quantityInput.value) > 0) {
+    quantityInput.value = parseInt(quantityInput.value) - 1;
+  }
+});
+
+</script>  

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Laundry</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="sty.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div>
+        <h2><i class="fas fa-cog"></i> Clenze Laundry</h2>
+      </div>
+      <!-- Navigation is mostly unorder list -->
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#about">About </a></li>
+        <li><a href="contact.html">Contact </a></li>
+        <a href="login.html"><button class="btnLogin-popup">Login</button></a>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-desc">
+        <h1 style="font-size:5vw;">Best laundry services </h1>
+        <p> LAUNDRY & DRY CLEANING</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="How it works">
+      <div class="container"></div>
+        <h1>About us</h1>
+        <p>This is our process for customers</p>
+
+        <div class="row">
+          <div class="card">
+            <i class="fa-regular fa-square-check"></i>
+            <h1>Get a Price</h1>
+            <p>
+              Tell us about you, how you like your clothes and your dry cleaning
+              needs
+            </p>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h1>Book a Pickup</h1>
+            <p>
+              Tell us about you, how you like your clothes and your dry cleaning
+              needs
+            </p>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-bed"></i>
+            <h1>Breathe & Relax</h1>
+            <p>
+              Tell us about you, how you like your clothes and your dry cleaning
+              needs
+            </p>
+          </div>
+        </div>
+        <a href="#">Give a Price estimate</a>
+      </div>
+    </div>
+    <div id="about" class="why main-spacing">
+      <div class="container">
+        <h1>Why Clenze Laundry</h1>
+        <p>
+          The only laundry company that speeds us your last minutes deliveries
+        </p>
+
+        <div class="row-spacing">
+          <div class="row">
+            <div class="card">
+              <i class="fa-regular fa-square-check"></i>
+              <h1>Get a Price</h1>
+              <p>
+                Tell us about you, how you like your clothes and your dry
+                cleaning needs
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <h1>Book a Pickup</h1>
+              <p>
+                Tell us about you, how you like your clothes and your dry
+                cleaning needs
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card">
+              <i class="fa-regular fa-square-check"></i>
+              <h1>Get a Price</h1>
+              <p>
+                Tell us about you, how you like your clothes and your dry
+                cleaning needs
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <h1>Book a Pickup</h1>
+              <p>
+                Tell us about you, how you like your clothes and your dry
+                cleaning needs
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact main-spacing">
+      <div class="container">
+        <h1>Contact us today</h1>
+        <form>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+    <footer class="main-spacing">
+      
+    </footer>
+    
+    <script type="text/javascript">
+    function validateUsername(username) {
+     
+      var usernameFormat = /^[A-Z][a-zA-Z]*$/;
+      return username.match(usernameFormat);
+    }
+  
+  
+  
+  
+    function validateEmail(email) {
+      // Regular expression to validate email format
+      var emailFormat = /^[a-z]\w*@(gmail|yahoo)\.(com|co\.in|in)$/;
+      return email.match(emailFormat);
+    }
+  
+    function validateMobileNumber(mobileNumber) {
+      // Regular expression to validate 10-digit mobile number starting with '9'
+      var mobileNumberFormat = /^[6-9]\d{9}$/;
+      return mobileNumber.match(mobileNumberFormat);
+    }
+  
+    function validatePassword(password) {
+      // Validate password length and complexity
+      return password.length >= 8 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /\d/.test(password);
+  }
+  
+    // Get form fields
+    var usernameField = document.getElementById('username');
+    var emailField = document.getElementById('email');
+    var passwordField = document.getElementById('password');
+    var confirmPasswordField = document.getElementById('confirmpassword');
+    var mobileNumberField = document.getElementById('mobileNumber');
+    var usernameError = document.getElementById('username-error');
+    var emailError = document.getElementById('email-error');
+    var passwordError = document.getElementById('password-error');
+    var confirmPasswordError = document.getElementById('confirmpassword-error');
+    var mobileError = document.getElementById('mobile-error');
+    </script> 
+  </body>
+</html>
+    
+    </script> 
+  

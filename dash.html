@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        /* CSS for the dashboard layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #02082c;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .sidebar {
+            background-color: #f2f2f2;
+            float: left;
+            width: 200px;
+            height: 100vh;
+        }
+        
+        .content {
+            padding: 20px;
+            margin-left: 200px;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            clear: both;
+        }
+        
+        /* CSS for the navigation menu */
+        .sidebar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .sidebar li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .sidebar li a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .sidebar li a:hover {
+            color: #000;
+        }
+        
+        /* CSS for the content section */
+        .content h2 {
+            margin-bottom: 20px;
+        }
+        
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .content th,
+        .content td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .content th {
+            background-color: #f2f2f2;
+        }
+        
+        .content .action-btn {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .content .action-btn.reject {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+    </div>
+    
+    <div class="sidebar">
+        <ul>
+        
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Laundry request</a></li>
+            <li><a href="#">Request status</a></li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h2>Laundry Requests</h2>
+        
+        <table>
+            <tr>
+                <th>Request ID</th>
+                <th>Customer Name</th>
+                <th>Items</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                

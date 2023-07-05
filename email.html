@@ -1,0 +1,175 @@
+<html>
+<head>
+    <title> unique id</title>
+    <?php
+  
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+        require('C:\Users\Thirthesha\vendor/autoload.php');
+        if(isset($_POST['submit']))
+        {
+            $a=$_POST["name"];
+            $d=$_POST["Email"];
+            $g=$_POST["contactnumber"];
+            $c=$_POST["pincode"];
+            $b=$_POST["address"];
+            $h=$_POST["datetime"];
+
+            $mail = new PHPMailer(true);
+
+            try 
+            {
+            
+            $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
+
+           
+            $mail->isSMTP();
+
+        
+            $mail->Host = 'smtp.gmail.com';
+
+         
+            $mail->SMTPAuth = true;
+
+        
+            $mail->Username = 'monimonu5040@gmail.com';
+
+            
+            $mail->Password = 'tcogfvoiyqarvdrs';
+
+           
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
+        
+            $mail->Port = 587;
+
+         
+            $mail->setFrom('vaishnaviachar2@gmail.com');
+
+           
+            $mail->addAddress($d, $a);
+
+           
+            $mail->isHTML(true);
+
+            $vercode = substr(number_format(time() * rand(), 0, '', ''), 0, 10);
+
+            $mail->Subject = 'Email verification';
+            $mail->Body    = "<p>Thanks for Booking!</p>
+                             Click the link below to verify
+                             <a href='http://localhost/petesta/email-verification.php?email=" . $d . "&vercode=". $vercode . " '>verify</a>";
+
+            $mail->send();
+            
+
+            $encrypted_password = password_hash($g, PASSWORD_DEFAULT);
+
+            
+            $conn=new mysqli("localhost","root","","petesta");
+
+            if($conn->connect_error)
+            {
+                die('connection failed:' .$conn->connect_error);
+            }
+            else
+            {
+                $sql="SELECT email from form where email='$d'";
+                $result=$conn->query($sql);
+                if($result->num_rows > 0)
+                {
+                    echo "<script>alert('user exists')</script>";
+                }
+                else
+                {
+                    // insert in users table
+            $sql = "INSERT INTO form(name, email, contactnumber, pincode, address, vercode, is_verified) VALUES ('" . $u . "' , '" . $a . "', '" . $d . "', '" . $g . "' , '" . $b . "' , '" . $h . "' , '" . $vercode . "', 0)";
+            mysqli_query($conn, $sql);
+ 
+           
+
+                    //$stmt=$conn->prepare("insert into sign(name,email,contactnumber,pincode,address,datetime ,vercode,verat) values(?,?,?,?,?,?,?)");
+                    //$stmt->bind_param("sdsssss",$a,$d,$g,$b,$h);
+                    //$stmt->execute();
+                    echo "<h3 align = center> Registered successfully </h3>";
+
+            //header('Location: l.php');
+                    //header("Location: email-verification.php?email=" . $d);
+                    //exit();
+                 }
+                }
+            }
+            catch (Exception $e) 
+            {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
+        }
+    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(verification)
+
+
+  <?php
+ 
+    if (isset($_GET["email"]) && isset($_GET["vercode"]))
+    {
+        $email = $_GET["email"];
+        $vercode = $_GET["vercode"];
+ 
+        // connect with database
+        $conn = mysqli_connect("localhost", "root", "", "petesta");
+
+        $query="SELECT * FROM sign WHERE email = '" . $email . "' AND vercode= '" . $vercode . "'";
+        $result  = mysqli_query($conn, $query);
+        //echo mysqli_num_rows($result);
+        
+        if(mysqli_num_rows($result) == 1)
+            {
+                $result_fetch=mysqli_fetch_assoc($result);
+                if($result_fetch['is_verified'] == 0)
+                {
+                    // $sql = "UPDATE sign SET is_verified = 1 WHERE email = '" . $email . "' 'AND vercode =' '" . $vercode . "'";
+                    $sql="UPDATE sign SET is_verified = '1' WHERE email = '$email' AND vercode = '$vercode' ";
+                    if(mysqli_query($conn, $sql))
+                    {
+                        echo "<alert> Verification succesfull </alert>";
+                        $sql1="UPDATE sign SET vercode = '' WHERE email = '$email' ";
+                        mysqli_query($conn, $sql1);
+                    }
+                }
+                else{
+                    echo "<alert> Verification not succesfull </alert>";   
+                }
+            }
+ 
+        // mark email as verified
+        
+ 
+        if (mysqli_affected_rows($conn) == 0)
+        {
+            die("Verification code failed.");
+        }
+ 
+      //  echo "<p>You can login now.</p>";
+        exit();
+    }
+ 
+?>
+
+
+    
